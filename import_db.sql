@@ -41,10 +41,9 @@ DROP TABLE IF EXISTS question_likes;
 CREATE TABLE question_likes (
   id INTEGER PRIMARY KEY,
 
-  user_id INTEGER REFERENCES users(id),
-  question_id INTEGER REFERENCES questions(id)
+  question_id INTEGER REFERENCES questions(id),
+  user_id INTEGER REFERENCES users(id)
 );
-
 
 INSERT INTO
   users(fname, lname)
@@ -80,4 +79,14 @@ VALUES
   (2, 1),
   (2, 2),
   (2, 3),
-  (1, 1);
+  (1, 1),
+  (1, 2),
+  (3, 1);
+
+INSERT INTO
+  question_likes (question_id, user_id)
+VALUES
+  (2, 1),
+  (2, 2),
+  (2, 3),
+  (3, 1);
